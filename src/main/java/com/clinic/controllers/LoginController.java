@@ -1,12 +1,10 @@
 package com.clinic.controllers;
 
-import com.clinic.Main;
+import com.clinic.utils.setNavigator;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-
-import java.io.IOException;
 
 public class LoginController {
 
@@ -34,25 +32,14 @@ public class LoginController {
 
     @FXML
     private void handleLogin() {
-        String username = usernameField.getText().trim();
-        String password = passwordField.getText();
-
-        if (username.isEmpty() || password.isEmpty()) {
-            System.out.println("Please enter both username and password");
-            return;
-        }
-
-        // Simple authentication for testing
-        if ("admin".equals(username) && "admin123".equals(password)) {
-            System.out.println("Login successful!");
-            // Add navigation to dashboard here
-        } else {
-            System.out.println("Invalid credentials");
-            passwordField.clear();
-        }
+//        if (loginSuccessful) {
+            setNavigator.goToPage("/FXML/dashboard.fxml", "Dashboard");
+//        }
     }
     @FXML
-    private void goToDashboard() throws IOException {
-        Main.changeScene("dashboard.fxml");
+    private void handleSignIn() {
+        setNavigator.goToPage("/FXML/SignIn.fxml", "Sign In");
+//
     }
+
 }

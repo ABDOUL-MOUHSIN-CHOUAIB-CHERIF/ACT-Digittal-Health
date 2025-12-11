@@ -57,7 +57,7 @@
             <VBox alignment="CENTER_LEFT" spacing="10" style="-fx-padding: 0 0 40 0;">
                 <Label text="Welcome Back"
                        style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #1a73e8;"/>
-                <Label text="Sign in to your account"
+                <Label text="Log in to your account"
                        style="-fx-font-size: 16px; -fx-text-fill: #666;"/>
             </VBox>
 
@@ -69,7 +69,7 @@
                     <Label text="Username"
                            style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #333;"/>
                     <TextField fx:id="usernameField"
-                               promptText="Enter your username"
+                               promptText="Enter your username(only the first name)"
                                style="-fx-pref-height: 50px; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #ddd; -fx-padding: 0 15;"/>
                 </VBox>
 
@@ -80,6 +80,7 @@
                     <PasswordField fx:id="passwordField"
                                    promptText="Enter your password"
                                    style="-fx-pref-height: 50px; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #ddd; -fx-padding: 0 15;"/>
+                   
                 </VBox>
 
                 <!-- Remember Me & Forgot Password -->
@@ -91,7 +92,7 @@
                 </HBox>
 
                 <!-- Login Button -->
-                <Button fx:id="loginButton" text="SIGN IN"
+                <Button fx:id="loginButton" text="LOG IN"
                         onAction="#handleLogin"
                         style="-fx-pref-height: 50px; -fx-background-color: #1a73e8; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px; -fx-background-radius: 8; -fx-cursor: hand;"
                         prefWidth="400"/>
@@ -113,7 +114,7 @@
                 <HBox alignment="CENTER" style="-fx-padding: 30 0 0 0;">
                     <Label text="Don't have an account? "
                            style="-fx-text-fill: #666; -fx-font-size: 14px;"/>
-                    <Button text="Sign up"
+                    <Button text="Sign in" onAction="#handleSignIn"
                             style="-fx-background-color: transparent; -fx-text-fill: #1a73e8; -fx-font-weight: bold; -fx-font-size: 14px; -fx-padding: 0 0 0 5; -fx-cursor: hand;"/>
                 </HBox>
 

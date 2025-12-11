@@ -15,10 +15,13 @@
        <HBox
        AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0"
        AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
-<!--         Side bar  -->
+<!--         Sidebar  -->
            <VBox alignment="CENTER" prefHeight="700.0" prefWidth="150.0"
                  style="-fx-background-color: linear-gradient(to bottom right, #1a73e8, #0d47a1);">
-
+               <Label text="🏥"
+                      style="-fx-font-size: 48px; -fx-padding: 0;"/>
+               <Label text="ACT Digital Health"
+                      style="-fx-text-fill: white; -fx-font-size: 28px; -fx-font-weight: bold; -fx-padding: 10 0 0 0;"/>
            </VBox>
        </HBox>
 </AnchorPane>

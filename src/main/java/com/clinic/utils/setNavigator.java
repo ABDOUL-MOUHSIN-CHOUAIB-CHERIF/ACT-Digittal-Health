@@ -1,4 +1,4 @@
-package com.clinic;
+package com.clinic.utils;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

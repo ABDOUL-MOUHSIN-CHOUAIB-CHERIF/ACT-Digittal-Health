@@ -1,14 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.clinic.controllers.SignIncontroller">
 
-</AnchorPane>
+    <!-- Main Container -->
+    <HBox prefHeight="700.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+
+
+        <!-- Right Side - Login Form -->
+        <VBox alignment="CENTER" prefWidth="600" style="-fx-background-color: white; -fx-padding: 60;">
+             <Label style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #1a73e8;" text="Welcome Bro">
+            <VBox.margin>
+               <Insets top="-40.0" />
+            </VBox.margin></Label>
+
+            <!-- Login Header -->
+            <VBox alignment="CENTER_LEFT" spacing="10" style="-fx-padding: 0 0 40 0;">
+                <Label style="-fx-font-size: 16px; -fx-text-fill: #666;" text="Sign in to have an account" textFill="#0c47e8d6" />
+
+               <!-- Login Form -->
+               <VBox alignment="CENTER_LEFT" prefHeight="587.0" prefWidth="198.0" spacing="25">
+   
+                   <!-- Username Field -->
+                   <VBox spacing="8">
+                       <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #333;" text="Username" />
+                       <TextField fx:id="usernameField" promptText="Enter your username" style="-fx-pref-height: 50px; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #ddd; -fx-padding: 0 15;" />
+                   </VBox>
+   
+                   <!-- Email Field -->
+                   <VBox spacing="8">
+                       <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #333;" text="Eamil" />
+                       <TextField fx:id="emailField" promptText="Enter your  Email(yourname@gmail.com)" style="-fx-pref-height: 50px; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #ddd; -fx-padding: 0 15;" />
+                   </VBox>
+   
+                   <!-- Password Field -->
+                   <VBox spacing="8">
+                       <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #333;" text="Password" />
+                       <PasswordField fx:id="passwordField" promptText="Enter your password" style="-fx-pref-height: 50px; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #ddd; -fx-padding: 0 15;" />
+                   </VBox>
+   
+                   <!-- Password Field -->
+                   <VBox spacing="8">
+                       <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #333;" text=" Confirm Password" />
+                       <PasswordField fx:id="confirmpasswordField" promptText="Enter your password" style="-fx-pref-height: 50px; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #ddd; -fx-padding: 0 15;" />
+                   </VBox>
+   
+                   <!-- Password Field -->
+                   <VBox spacing="8">
+                       <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #333;" text="Phone" />
+                       <TextField fx:id="phoneField" promptText="Enter your phone number" style="-fx-pref-height: 50px; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #ddd; -fx-padding: 0 15;" />
+                   </VBox>
+                   <VBox spacing="8">
+                       <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #333;" text="Role" />
+                       <TextField fx:id="RoleField" promptText="Enter your role(DOCTOR, ADMIN, PHARMACIST)" style="-fx-pref-height: 50px; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #ddd; -fx-padding: 0 15;" />
+                   </VBox>
+   
+   <!--                    department-->
+                   <VBox spacing="8">
+                       <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #333;" text="Department" />
+                       <TextField fx:id="departmentField" promptText="Enter your Department" style="-fx-pref-height: 50px; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #ddd; -fx-padding: 0 15;" />
+                   </VBox>
+   
+                   <!-- Sign Up Link -->
+                   <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="57.0" prefWidth="180.0" spacing="20.0" style="-fx-padding: 30 0 0 0;">
+      
+                      <!-- Login Button -->
+                      <Button fx:id="loginButton" onAction="#handleRegister" prefWidth="100.0" style="-fx-pref-height: 50px; -fx-background-color: #1a73e8; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px; -fx-background-radius: 8; -fx-cursor: hand;" text="SIGN IN" />
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                             <Label style="-fx-text-fill: #666; -fx-font-size: 14px;" text="Already have an account? " />
+                             <Button onAction="#goToLogin" style="-fx-background-color: transparent; -fx-text-fill: #1a73e8; -fx-font-weight: bold; -fx-font-size: 14px; -fx-padding: 0 0 0 5; -fx-cursor: hand;" text="Log In" />
+                     </children>
+                  </VBox>
+                  <VBox.margin>
+                     <Insets top="-10.0" />
+                  </VBox.margin>
+                  <padding>
+                     <Insets bottom="5.0" top="5.0" />
+                  </padding>
+                   </HBox>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+   
+               </VBox>
+
+            </VBox>
+        </VBox>
+
+
+        <!-- Left Side - Hospital Branding -->
+        <VBox alignment="CENTER" prefWidth="600" style="-fx-background-color: linear-gradient(to bottom right, #1a73e8, #0d47a1);">
+
+            <!-- Additional Branding Text -->
+            <VBox alignment="CENTER" spacing="15" style="-fx-padding: 50 0 0 0;">
+                <Label style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;" text="Transforming Healthcare" />
+                <Label style="-fx-text-fill: rgba(255,255,255,0.8); -fx-font-size: 14px;" text="Through Technology" />
+            </VBox>
+
+            <!-- Hospital Icon Container -->
+            <StackPane>
+                <Circle fill="white" opacity="0.2" radius="80" />
+                <Circle fill="white" opacity="0.3" radius="60" />
+
+                <!-- Hospital Icon (Using Unicode + Styling) -->
+                <VBox alignment="CENTER" spacing="5">
+                    <Label style="-fx-font-size: 48px; -fx-padding: 0;" text="🏥" />
+                    <Label style="-fx-text-fill: white; -fx-font-size: 28px; -fx-font-weight: bold; -fx-padding: 10 0 0 0;" text="ACT Digital Health" />
+                    <Label style="-fx-text-fill: rgba(255,255,255,0.9); -fx-font-size: 16px; -fx-padding: 5 0 0 0;" text="Clinic Management System" />
+                </VBox>
+            </StackPane>
+        </VBox>
+    </HBox>
+    </AnchorPane>

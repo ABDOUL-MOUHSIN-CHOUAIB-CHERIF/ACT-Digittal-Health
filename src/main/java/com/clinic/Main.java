@@ -1,35 +1,44 @@
 package com.clinic;
 
+import com.clinic.utils.setNavigator;
+import database.DBConnection;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import java.io.IOException;
+import java.sql.Connection;
 
 public class Main extends Application {
-    private static Stage primaryStage;
+
     @Override
-    public void start(Stage stage) throws Exception {
-//        initialise the primarySecne
-        primaryStage = stage;
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/login.fxml"));
+    public void start(Stage primaryStage) throws Exception {
+        // ✅ TEST DATABASE CONNECTION FIRST
+        testDatabaseConnection();
 
-        Scene scene = new Scene(root, 1000, 700);
-        scene.getStylesheets().add(getClass().getResource("/css/login.css").toExternalForm());
+        // Set the primary stage for navigation
+        setNavigator.setStage(primaryStage);
 
-        primaryStage.setTitle("ACT Digital Health - Clinic Management System");
-        primaryStage.setScene(scene);
+        // Set window properties
         primaryStage.setMinWidth(1000);
         primaryStage.setMinHeight(700);
-        primaryStage.show();
+
+        // Start with login page using SimpleNavigator
+        setNavigator.goToPage("/FXML/SignIn.fxml", "Sign in");
     }
 
-    public static void changeScene(String fxml) throws IOException {
-        Parent pane = FXMLLoader.load(Main.class.getResource(fxml));
-        primaryStage.getScene().setRoot(pane);
+    // ✅ CREATE A METHOD FOR DATABASE TESTING
+    private void testDatabaseConnection() {
+        try {
+            Connection conn = DBConnection.getConnection();
+            if (conn != null && !conn.isClosed()) {
+                System.out.println("✅ Connected to MySQL successfully!");
+            } else {
+                System.out.println("❌ Connection failed!");
+            }
+        } catch (Exception e) {
+            System.out.println("❌ Database connection error: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
+
     public static void main(String[] args) {
         launch(args);
     }
