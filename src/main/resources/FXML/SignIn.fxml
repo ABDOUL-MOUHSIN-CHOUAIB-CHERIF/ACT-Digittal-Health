@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.collections.FXCollections?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -11,93 +13,109 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 
+<?import java.lang.String?>
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.clinic.controllers.SignIncontroller">
 
     <!-- Main Container -->
     <HBox prefHeight="700.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
 
-
         <!-- Right Side - Login Form -->
         <VBox alignment="CENTER" prefWidth="600" style="-fx-background-color: white; -fx-padding: 60;">
-             <Label style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #1a73e8;" text="Welcome Bro">
-            <VBox.margin>
-               <Insets top="-40.0" />
-            </VBox.margin></Label>
+            <Label style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #1a73e8;" text="Welcome Bro">
+                <VBox.margin>
+                    <Insets top="-40.0" />
+                </VBox.margin></Label>
 
             <!-- Login Header -->
             <VBox alignment="CENTER_LEFT" spacing="10" style="-fx-padding: 0 0 40 0;">
                 <Label style="-fx-font-size: 16px; -fx-text-fill: #666;" text="Sign in to have an account" textFill="#0c47e8d6" />
 
-               <!-- Login Form -->
-               <VBox alignment="CENTER_LEFT" prefHeight="587.0" prefWidth="198.0" spacing="25">
-   
-                   <!-- Username Field -->
-                   <VBox spacing="8">
-                       <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #333;" text="Username" />
-                       <TextField fx:id="usernameField" promptText="Enter your username" style="-fx-pref-height: 50px; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #ddd; -fx-padding: 0 15;" />
-                   </VBox>
-   
-                   <!-- Email Field -->
-                   <VBox spacing="8">
-                       <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #333;" text="Eamil" />
-                       <TextField fx:id="emailField" promptText="Enter your  Email(yourname@gmail.com)" style="-fx-pref-height: 50px; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #ddd; -fx-padding: 0 15;" />
-                   </VBox>
-   
-                   <!-- Password Field -->
-                   <VBox spacing="8">
-                       <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #333;" text="Password" />
-                       <PasswordField fx:id="passwordField" promptText="Enter your password" style="-fx-pref-height: 50px; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #ddd; -fx-padding: 0 15;" />
-                   </VBox>
-   
-                   <!-- Password Field -->
-                   <VBox spacing="8">
-                       <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #333;" text=" Confirm Password" />
-                       <PasswordField fx:id="confirmpasswordField" promptText="Enter your password" style="-fx-pref-height: 50px; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #ddd; -fx-padding: 0 15;" />
-                   </VBox>
-   
-                   <!-- Password Field -->
-                   <VBox spacing="8">
-                       <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #333;" text="Phone" />
-                       <TextField fx:id="phoneField" promptText="Enter your phone number" style="-fx-pref-height: 50px; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #ddd; -fx-padding: 0 15;" />
-                   </VBox>
-                   <VBox spacing="8">
-                       <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #333;" text="Role" />
-                       <TextField fx:id="RoleField" promptText="Enter your role(DOCTOR, ADMIN, PHARMACIST)" style="-fx-pref-height: 50px; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #ddd; -fx-padding: 0 15;" />
-                   </VBox>
-   
-   <!--                    department-->
-                   <VBox spacing="8">
-                       <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #333;" text="Department" />
-                       <TextField fx:id="departmentField" promptText="Enter your Department" style="-fx-pref-height: 50px; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #ddd; -fx-padding: 0 15;" />
-                   </VBox>
-   
-                   <!-- Sign Up Link -->
-                   <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="57.0" prefWidth="180.0" spacing="20.0" style="-fx-padding: 30 0 0 0;">
-      
-                      <!-- Login Button -->
-                      <Button fx:id="loginButton" onAction="#handleRegister" prefWidth="100.0" style="-fx-pref-height: 50px; -fx-background-color: #1a73e8; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px; -fx-background-radius: 8; -fx-cursor: hand;" text="SIGN IN" />
-                  <VBox prefHeight="200.0" prefWidth="100.0">
-                     <children>
-                             <Label style="-fx-text-fill: #666; -fx-font-size: 14px;" text="Already have an account? " />
-                             <Button onAction="#goToLogin" style="-fx-background-color: transparent; -fx-text-fill: #1a73e8; -fx-font-weight: bold; -fx-font-size: 14px; -fx-padding: 0 0 0 5; -fx-cursor: hand;" text="Log In" />
-                     </children>
-                  </VBox>
-                  <VBox.margin>
-                     <Insets top="-10.0" />
-                  </VBox.margin>
-                  <padding>
-                     <Insets bottom="5.0" top="5.0" />
-                  </padding>
-                   </HBox>
-               <VBox.margin>
-                  <Insets top="5.0" />
-               </VBox.margin>
-   
-               </VBox>
+                <!-- Login Form -->
+                <VBox alignment="CENTER_LEFT" prefHeight="587.0" prefWidth="198.0" spacing="25">
+
+                    <!-- Username Field -->
+                    <VBox spacing="8">
+                        <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #333;" text="Username" />
+                        <TextField fx:id="usernameField" promptText="Enter your username" style="-fx-pref-height: 50px; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #ddd; -fx-padding: 0 15;" />
+                    </VBox>
+
+                    <!-- Email Field -->
+                    <VBox spacing="8">
+                        <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #333;" text="Email" />
+                        <TextField fx:id="emailField" promptText="Enter your Email(yourname@gmail.com)" style="-fx-pref-height: 50px; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #ddd; -fx-padding: 0 15;" />
+                    </VBox>
+
+                    <!-- Password Field -->
+                    <VBox spacing="8">
+                        <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #333;" text="Password" />
+                        <PasswordField fx:id="passwordField" promptText="Enter your password" style="-fx-pref-height: 50px; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #ddd; -fx-padding: 0 15;" />
+                    </VBox>
+
+                    <!-- Confirm Password Field -->
+                    <VBox spacing="8">
+                        <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #333;" text="Confirm Password" />
+                        <PasswordField fx:id="confirmpasswordField" promptText="Enter your password" style="-fx-pref-height: 50px; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #ddd; -fx-padding: 0 15;" />
+                    </VBox>
+
+                    <!-- Phone Field -->
+                    <VBox spacing="8">
+                        <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #333;" text="Phone" />
+                        <TextField fx:id="phoneField" promptText="Enter your phone number" style="-fx-pref-height: 50px; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #ddd; -fx-padding: 0 15;" />
+                    </VBox>
+
+                    <!-- Role Dropdown (REPLACED TextField with ComboBox) -->
+                    <VBox spacing="8">
+                        <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #333;" text="Role" />
+                        <ComboBox fx:id="roleComboBox" promptText="Select your role" style="-fx-pref-height: 50px; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #ddd; -fx-padding: 0 15;">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="DOCTOR" />
+                                    <String fx:value="RECEPTIONIST" />
+                                    <String fx:value="PHARMACIST" />
+                                    <String fx:value="ADMIN" />
+                                </FXCollections>
+                            </items>
+                        </ComboBox>
+                    </VBox>
+
+                    <!-- Department Field -->
+                    <VBox spacing="8">
+                        <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #333;" text="Department" />
+                        <TextField fx:id="departmentField" promptText="Enter your Department" style="-fx-pref-height: 50px; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #ddd; -fx-padding: 0 15;" />
+                    </VBox>
+
+                    <!-- Sign Up Link -->
+                    <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="57.0" prefWidth="300.0" spacing="20.0" style="-fx-padding: 30 0 0 0;">
+
+                        <!-- Sign In Button -->
+                        <Button fx:id="loginButton" onAction="#handleRegister" prefWidth="100.0" style="-fx-pref-height: 50px; -fx-background-color: #1a73e8; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px; -fx-background-radius: 8; -fx-cursor: hand;" text="SIGN IN">
+                            <HBox.margin>
+                                <Insets top="-3.0" />
+                            </HBox.margin></Button>
+                        <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="44.0" prefWidth="170.0">
+                            <children>
+                                <Label style="-fx-text-fill: #666; -fx-font-size: 14px;" text="Already have an account? " />
+                                <Button onAction="#goToLogin" style="-fx-background-color: transparent; -fx-text-fill: #1a73e8; -fx-font-weight: bold; -fx-font-size: 14px; -fx-padding: 0 0 0 5; -fx-cursor: hand;" text="Log In">
+                                    <VBox.margin>
+                                        <Insets left="50.0" />
+                                    </VBox.margin></Button>
+                            </children>
+                        </VBox>
+                        <VBox.margin>
+                            <Insets top="-10.0" />
+                        </VBox.margin>
+                        <padding>
+                            <Insets bottom="5.0" top="5.0" />
+                        </padding>
+                    </HBox>
+                    <VBox.margin>
+                        <Insets top="5.0" />
+                    </VBox.margin>
+
+                </VBox>
 
             </VBox>
         </VBox>
-
 
         <!-- Left Side - Hospital Branding -->
         <VBox alignment="CENTER" prefWidth="600" style="-fx-background-color: linear-gradient(to bottom right, #1a73e8, #0d47a1);">
@@ -122,4 +140,4 @@
             </StackPane>
         </VBox>
     </HBox>
-    </AnchorPane>
+</AnchorPane>

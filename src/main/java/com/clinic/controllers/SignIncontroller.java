@@ -6,6 +6,7 @@ import com.clinic.utils.ValidationUtil;
 import com.clinic.utils.PasswordUtil;
 import com.clinic.utils.AlertUtils;
 import javafx.fxml.FXML;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.control.PasswordField;
 import java.util.HashMap;
@@ -21,9 +22,15 @@ public class SignIncontroller {
     @FXML public TextField phoneField;
     @FXML public PasswordField passwordField;
     @FXML public PasswordField confirmpasswordField;
-    @FXML public TextField RoleField;
     @FXML public TextField departmentField;
+    @FXML private ComboBox<String> roleComboBox;
 
+    @FXML
+    public void initialize() {
+        // Set up role dropdown with options
+        roleComboBox.getItems().addAll("DOCTOR", "RECEPTIONIST", "PHARMACIST", "ADMIN");
+        roleComboBox.setPromptText("Select your role");
+    }
     @FXML
     private void handleRegister() {
         // 1. Get values from ALL form fields
@@ -32,7 +39,7 @@ public class SignIncontroller {
         String phone = phoneField.getText().trim();
         String password = passwordField.getText();
         String confirmPassword = confirmpasswordField.getText();
-        String role = RoleField.getText().trim();
+        String role = roleComboBox.getValue(); // Changed from RoleField to roleComboBox
         String department = departmentField.getText().trim();
 
         // 3. Create login username - FIRST NAME ONLY
@@ -65,9 +72,11 @@ public class SignIncontroller {
         if (!passwordError.isEmpty()) errors.put("Password", passwordError);
 
         // Validate role
-        String roleError = ValidationUtil.validateRole(role);
-        if (!roleError.isEmpty()) errors.put("Role", roleError);
-
+        if (role == null || role.isEmpty()) {
+            AlertUtils.showError("Please select a role from the dropdown");
+            roleComboBox.setStyle("-fx-border-color: red; -fx-border-width: 2px;");
+            return;
+        }
         // Validate full name (simplified - no splitting)
         if (fullName.isEmpty()) {
             errors.put("Full Name", "Full name is required");
@@ -156,7 +165,7 @@ public class SignIncontroller {
         phoneField.clear();
         passwordField.clear();
         confirmpasswordField.clear();
-        RoleField.clear();
+        roleComboBox.setValue(null);
         departmentField.clear();
     }
 }
