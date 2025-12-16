@@ -86,29 +86,29 @@ public class LoginController {
     }
 
     private void redirectBasedOnRole(User user) {
-        String role = user.getRole().toUpperCase();
+        if (user == null || user.getRole() == null) {
+            setNavigator.goToPage("/FXML/dashboard.fxml", "Dashboard");
+            return;
+        }
 
-        switch(role) {
-            case "DOCTOR":
-                setNavigator.goToPage("/FXML/doctor_dashboard.fxml", "Doctor Dashboard");
-                break;
-            case "RECEPTIONIST":
-                setNavigator.goToPage("/FXML/receptionist.fxml", "Reception Dashboard");
-                break;
-            case "PHARMACIST":
-                setNavigator.goToPage("/FXML/pharmacy_dashboard.fxml", "Pharmacy Dashboard");
-                break;
-            case "ADMIN":
-                setNavigator.goToPage("/FXML/dashboard.fxml", "Admin Dashboard");
-                break;
-            default:
-                setNavigator.goToPage("/FXML/dashboard.fxml", "Dashboard");
-                break;
+        String role = user.getRole().trim().toUpperCase();
+
+        if (role.contains("DOCTOR")) {
+            setNavigator.goToPage("/FXML/doctor.fxml", "Doctor Dashboard");
+        } else if (role.contains("RECEPTION")) {
+            setNavigator.goToPage("/FXML/receptionist.fxml", "Reception Dashboard");
+        } else if (role.contains("PHARMACIST")) {
+            setNavigator.goToPage("/FXML/pharmacy_dashboard.fxml", "Pharmacy Dashboard");
+        } else if (role.contains("ADMIN")) {
+            setNavigator.goToPage("/FXML/dashboard.fxml", "Admin Dashboard");
+        } else {
+            setNavigator.goToPage("/FXML/dashboard.fxml", "Dashboard");
         }
     }
 
+
     @FXML
     private void handleSignIn() {
-        setNavigator.goToPage("/FXML/SignIn.fxml", "Sign In");
+      setNavigator.goToPage("/FXML/SignIn.fxml", "Sign In");
     }
 }

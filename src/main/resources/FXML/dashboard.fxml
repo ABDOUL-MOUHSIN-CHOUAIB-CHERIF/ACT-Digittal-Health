@@ -99,7 +99,7 @@
                 </Button>
 
                 <!-- Appointments -->
-                <Button style="-fx-background-color: transparent; -fx-text-fill: rgba(255,255,255,0.8); -fx-font-size: 14px; -fx-padding: 12 20; -fx-background-radius: 8; -fx-alignment: CENTER_LEFT;">
+                <Button onAction="#GOTORECEPTIONIST" style="-fx-background-color: transparent; -fx-text-fill: rgba(255,255,255,0.8); -fx-font-size: 14px; -fx-padding: 12 20; -fx-background-radius: 8; -fx-alignment: CENTER_LEFT;">
                     <graphic>
                         <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
                             <image>
@@ -107,7 +107,7 @@
                             </image>
                         </ImageView>
                     </graphic>
-                    <text>Appointments</text>
+                    <text>Receptionist</text>
                     <padding>
                         <Insets left="10" />
                     </padding>

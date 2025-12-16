@@ -4,17 +4,17 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Patient {
-    private int id;
+
     private String patientId; // Custom ID like PAT-001
-    private String firstName;
-    private String lastName;
+    private String name;
     private LocalDate dateOfBirth;
     private String gender; // "Male" or "Female"
     private String phone;
     private String email;
     private String address;
     private String emergencyContact;
-    private String medicalHistory;
+    private String status;
+    private  String illness;
     private LocalDateTime createdAt;
 
     // Constructors
@@ -23,33 +23,36 @@ public class Patient {
     }
 
     // Constructor for new patients (without database id)
-    public Patient(String patientId, String firstName, String lastName,
+    public Patient(String patientId, String name, String status, String illness ,
                    LocalDate dateOfBirth, String gender, String phone,
                    String email, String address, String emergencyContact) {
+        this.name = name;
         this.patientId = patientId;
-        this.firstName = firstName;
-        this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
         this.phone = phone;
         this.email = email;
         this.address = address;
         this.emergencyContact = emergencyContact;
+        this.status = status;
+        this.illness = illness;
         this.createdAt = LocalDateTime.now();
     }
 
+    public Patient(String name, String dob, String gender, String phone, String email, String address, String emergency) {
+        this.name = name;
+        this.gender = gender;
+        this.phone = phone;
+        this.email = email;
+        this.address = address;
+    }
+
     // Getters and Setters
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
 
     public String getPatientId() { return patientId; }
     public void setPatientId(String patientId) { this.patientId = patientId; }
-
-    public String getFirstName() { return firstName; }
-    public void setFirstName(String firstName) { this.firstName = firstName; }
-
-    public String getLastName() { return lastName; }
-    public void setLastName(String lastName) { this.lastName = lastName; }
 
     public LocalDate getDateOfBirth() { return dateOfBirth; }
     public void setDateOfBirth(LocalDate dateOfBirth) { this.dateOfBirth = dateOfBirth; }
@@ -69,15 +72,25 @@ public class Patient {
     public String getEmergencyContact() { return emergencyContact; }
     public void setEmergencyContact(String emergencyContact) { this.emergencyContact = emergencyContact; }
 
-    public String getMedicalHistory() { return medicalHistory; }
-    public void setMedicalHistory(String medicalHistory) { this.medicalHistory = medicalHistory; }
+    public String getStatus() { return status; }
+    public void setFirstName(String status) { this.status = status; }
+
+    public String getIllness() { return illness; }
+    public void setLastName(String illness) { this.illness = illness; }
 
     public LocalDateTime getCreatedAt() { return createdAt; }
     public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
 
+    public String getDob() {
+        return dateOfBirth != null ? dateOfBirth.toString() : "";
+    }
+
+    public String getEmergency() {
+        return emergencyContact;
+    }
     // Utility Methods
     public String getFullName() {
-        return firstName + " " + lastName;
+        return name;
     }
 
     public int getAge() {
@@ -96,7 +109,7 @@ public class Patient {
     @Override
     public String toString() {
         return "Patient{" +
-                "id=" + id +
+                "name=" + name +
                 ", patientId='" + patientId + '\'' +
                 ", fullName='" + getFullName() + '\'' +
                 ", phone='" + phone + '\'' +

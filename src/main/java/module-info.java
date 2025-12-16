@@ -6,6 +6,7 @@ module com.clinic {
     requires jbcrypt;
 
 
+
     opens com.clinic to javafx.fxml;
     opens com.clinic.controllers to javafx.fxml;
 

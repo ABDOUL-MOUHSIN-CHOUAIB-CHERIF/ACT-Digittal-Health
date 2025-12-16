@@ -21,7 +21,7 @@ public class Main extends Application {
         primaryStage.setMinHeight(700);
 
         // Start with login page using SimpleNavigator
-        setNavigator.goToPage("/FXML/SignIn.fxml", "Sign in");
+        setNavigator.goToPage("/FXML/doctor  .fxml", "Sign in");
     }
 
     // ✅ CREATE A METHOD FOR DATABASE TESTING

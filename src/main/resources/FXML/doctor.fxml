@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: #f8f9fa;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.clinic.controllers.DoctorController">
+
+    <!-- Main Container -->
+    <HBox AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+
+        <!-- Sidebar - Hospital Blue Theme -->
+        <VBox minWidth="-Infinity" prefHeight="700.0" prefWidth="185.0" style="-fx-background-color: linear-gradient(to bottom, #0d47a1, #1a73e8);">
+
+            <!-- Hospital Logo -->
+            <VBox alignment="CENTER" spacing="10" style="-fx-padding: 30 0 30 0;">
+                <ImageView fitHeight="80" fitWidth="80" preserveRatio="true">
+                    <image>
+                        <Image url="@../IMAGES/ACT-logo.png" />
+                    </image>
+                </ImageView>
+                <Label style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;" text="ACT Digital Health" />
+                <Label style="-fx-text-fill: rgba(255,255,255,0.8); -fx-font-size: 12px;" text="Doctor Panel" />
+            </VBox>
+
+            <!-- Navigation Menu -->
+            <VBox spacing="8" style="-fx-padding: 0 15;">
+                <!-- Dashboard -->
+                <Button style="-fx-background-color: rgba(255,255,255,0.15); -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 12 20; -fx-background-radius: 8; -fx-alignment: CENTER_LEFT;">
+                    <graphic>
+                        <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                            <image>
+                                <Image url="@../IMAGES/img.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <text>Dashboard</text>
+                    <padding>
+                        <Insets left="10" />
+                    </padding>
+                </Button>
+
+                <!-- Patient Management -->
+                <Button style="-fx-background-color: transparent; -fx-text-fill: rgba(255,255,255,0.8); -fx-font-size: 14px; -fx-padding: 12 20; -fx-background-radius: 8; -fx-alignment: CENTER_LEFT;">
+                    <graphic>
+                        <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                            <image>
+                                <Image url="@../IMAGES/img_9.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <text>All Patient Records</text>
+                    <padding>
+                        <Insets left="10" />
+                    </padding>
+                </Button>
+
+                <!-- Check-in/Check-out -->
+                <Button style="-fx-background-color: transparent; -fx-text-fill: rgba(255,255,255,0.8); -fx-font-size: 14px; -fx-padding: 12 20; -fx-background-radius: 8; -fx-alignment: CENTER_LEFT;">
+                    <graphic>
+                        <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                            <image>
+                                <Image url="@../IMAGES/img_3.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <text>Today's Consultations</text>
+                    <padding>
+                        <Insets left="10" />
+                    </padding>
+                </Button>
+
+                <!-- Billing -->
+                <Button style="-fx-background-color: transparent; -fx-text-fill: rgba(255,255,255,0.8); -fx-font-size: 14px; -fx-padding: 12 20; -fx-background-radius: 8; -fx-alignment: CENTER_LEFT;">
+                    <graphic>
+                        <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                            <image>
+                                <Image url="@../IMAGES/img_2.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <text>Prescription History</text>
+                    <padding>
+                        <Insets left="10" />
+                    </padding>
+                </Button>
+
+                <!-- Reports -->
+                <Button style="-fx-background-color: transparent; -fx-text-fill: rgba(255,255,255,0.8); -fx-font-size: 14px; -fx-padding: 12 20; -fx-background-radius: 8; -fx-alignment: CENTER_LEFT;">
+                    <graphic>
+                        <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                            <image>
+                                <Image url="@../IMAGES/img_8.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <text>Medical Reports</text>
+                    <padding>
+                        <Insets left="10" />
+                    </padding>
+                </Button>
+            </VBox>
+
+            <!-- Logout Button at Bottom -->
+            <VBox VBox.vgrow="ALWAYS">
+                <children>
+                    <VBox style="-fx-padding: 20 0;" />
+                    <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                        <VBox.margin>
+                            <Insets top="130.0" />
+                        </VBox.margin>
+                        <children>
+                            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                <HBox.margin>
+                                    <Insets left="10.0" top="20.0" />
+                                </HBox.margin>
+                                <image>
+                                    <Image url="@../IMAGES/img_11.png" />
+                                </image>
+                            </ImageView>
+                            <Button style="-fx-background-color: rgba(255,255,255,0.1); -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 12 20; -fx-background-radius: 8; -fx-border-color: rgba(255,255,255,0.3); -fx-border-width: 1; -fx-border-radius: 8; -fx-alignment: CENTER;">
+                                <text>Logout</text>
+                                <HBox.margin>
+                                    <Insets top="20.0" />
+                                </HBox.margin>
+                            </Button>
+                        </children>
+                    </HBox>
+                </children>
+            </VBox>
+        </VBox>
+
+        <!-- Main Content Area -->
+        <VBox prefHeight="700.0" prefWidth="1027.0" spacing="0" style="-fx-background-color: #f8f9fa;">
+
+            <!-- Top Header -->
+            <HBox alignment="CENTER_LEFT" spacing="15" style="-fx-background-color: white; -fx-padding: 15 25; -fx-border-color: #e0e0e0; -fx-border-width: 0 0 1 0;">
+
+                <!-- Page Title -->
+                <VBox>
+                    <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #1a237e;" text="Doctor Dashboard" />
+                    <Label style="-fx-font-size: 14px; -fx-text-fill: #666;" text="Patient Consultation AND Treatment Management" />
+                </VBox>
+
+                <HBox HBox.hgrow="ALWAYS" />
+
+                <!-- Search Box -->
+                <TextField promptText="Search today's patients..." style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-padding: 8 15; -fx-pref-width: 300;" />
+
+                <!-- Notifications & Profile -->
+                <HBox alignment="CENTER" spacing="15">
+                    <Button style="-fx-background-color: transparent;">
+                        <graphic>
+                            <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                                <image>
+                                    <Image url="@../IMAGES/img_3.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+
+                    <!-- User Profile -->
+                    <HBox alignment="CENTER" spacing="10">
+                        <Circle fill="#1a73e8" radius="20" />
+                        <VBox>
+                            <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #333;" text="Doctor" />
+                            <Label style="-fx-font-size: 12px; -fx-text-fill: #666;" text="Dr. [Name]" />
+                        </VBox>
+                    </HBox>
+                </HBox>
+            </HBox>
+
+            <!-- TODAY'S PATIENTS TABLE - First Section -->
+            <VBox maxHeight="-Infinity" prefHeight="275.0" prefWidth="1015.0" style="-fx-padding: 20 25 10 25;" VBox.vgrow="ALWAYS">
+                <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #1a237e;" text="Today's Patients - Select to Consult" />
+
+                <TableView fx:id="todaysPatientsTable" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="218.0" prefWidth="567.0" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="patientNameCol" prefWidth="225.33330857753754" text="Patient Name" />
+                        <TableColumn fx:id="registrationTimeCol" prefWidth="146.66665649414062" text="Registration Time" />
+                        <TableColumn fx:id="statusCol" prefWidth="84.6666259765625" text="Status" />
+                        <TableColumn fx:id="actionCol" minWidth="1.3333740234375" prefWidth="106.66668701171875" text="Action" />
+                    </columns>
+                </TableView>
+            </VBox>
+
+            <!-- CONSULTATION FORM - Second Section (Hidden until patient selected) -->
+            <ScrollPane fx:id="consultationScroll" fitToWidth="true" prefHeight="400" style="-fx-background-color: transparent;" visible="false">
+                <VBox fx:id="consultationForm" spacing="15" style="-fx-padding: 20 25;                       -fx-background-color: white;                       -fx-border-color: #e0e0e0;                       -fx-border-width: 1;                       -fx-border-radius: 8;">
+                    <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #1a237e;" text="Patient Consultation Form" />
+
+                    <!-- Patient Info Display (Read-only) -->
+                    <HBox spacing="20" style="-fx-padding: 15 0;">
+                        <Label fx:id="selectedPatientName" style="-fx-font-weight: bold; -fx-text-fill: #333;" text="Patient: " />
+                        <Label fx:id="selectedPatientTime" style="-fx-text-fill: #666;" text="Registered: " />
+                    </HBox>
+
+                    <!-- Consultation Fields (Doctor fills these) -->
+                    <VBox spacing="15" style="-fx-padding: 10 0;">
+                        <!-- Medication Name -->
+                        <TextField fx:id="medicationField" promptText="Medication Prescribed" style="-fx-padding: 8 12; -fx-background-radius: 5;" />
+
+                        <!-- Illness/Diagnosis -->
+                        <TextField fx:id="illnessField" promptText="Illness/Diagnosis" style="-fx-padding: 8 12; -fx-background-radius: 5;" />
+
+                        <!-- Symptoms -->
+                        <TextArea fx:id="symptomsArea" prefRowCount="3" promptText="Symptoms Observed" style="-fx-padding: 8 12; -fx-background-radius: 5;" />
+
+                        <!-- Treatment Plan -->
+                        <TextArea fx:id="treatmentArea" prefRowCount="3" promptText="Treatment Plan" style="-fx-padding: 8 12; -fx-background-radius: 5;" />
+
+                        <VBox spacing="10" style="-fx-padding: 10 0;">
+                            <fx:define>
+                                <ToggleGroup fx:id="statusGroup" />
+                            </fx:define>
+                            <Label style="-fx-font-weight: bold; -fx-text-fill: #333;" text="Patient Status:" />
+                            <HBox alignment="CENTER_LEFT" spacing="20">
+                                <RadioButton fx:id="statusUnderTreatment" text="Still Under Treatment">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="statusGroup" />
+                           </toggleGroup></RadioButton>
+                                <RadioButton fx:id="statusRecovered" text="No More Ill / Recovered" toggleGroup="$statusGroup" />
+                            </HBox>
+                        </VBox>
+
+
+                        <!-- Action Buttons -->
+                        <HBox spacing="10" style="-fx-padding: 20 0 10 0;">
+                            <Button fx:id="saveConsultationBtn" onAction="#saveConsultation" style="-fx-background-color: #1a73e8; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20; -fx-background-radius: 5;" text="Save Consultation" />
+                            <Button fx:id="clearBtn" onAction="#clearForm" style="-fx-background-color: #f0f0f0; -fx-text-fill: #666; -fx-padding: 10 20; -fx-background-radius: 5;" text="Clear Form" />
+                        </HBox>
+                    </VBox>
+                </VBox>
+            </ScrollPane>
+        </VBox>
+    </HBox>
+</AnchorPane>

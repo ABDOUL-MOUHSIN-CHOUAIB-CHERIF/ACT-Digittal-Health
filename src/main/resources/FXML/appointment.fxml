@@ -1,14 +1,244 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/11.0.1"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.clinic.controllers.AppointmentController"
-            prefHeight="700.0" prefWidth="1000.0">
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: #f8f9fa;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.clinic.controllers.receptionistController">
 
+    <!-- Main Container -->
+    <HBox AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+
+    <!-- Sidebar - Hospital Blue Theme -->
+    <VBox minWidth="-Infinity" prefHeight="700.0" prefWidth="185.0" style="-fx-background-color: linear-gradient(to bottom, #0d47a1, #1a73e8);">
+
+        <!-- Hospital Logo -->
+        <VBox alignment="CENTER" spacing="10" style="-fx-padding: 30 0 30 0;">
+            <ImageView fitHeight="80" fitWidth="80" preserveRatio="true">
+                <image>
+                    <Image url="@../IMAGES/ACT-logo.png" />
+                </image>
+            </ImageView>
+            <Label style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;" text="ACT Digital Health" />
+            <Label style="-fx-text-fill: rgba(255,255,255,0.8); -fx-font-size: 12px;" text="Reception Panel" />
+        </VBox>
+
+        <!-- Navigation Menu -->
+        <VBox spacing="8" style="-fx-padding: 0 15;">
+            <!-- Dashboard -->
+            <Button style="-fx-background-color: rgba(255,255,255,0.15); -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 12 20; -fx-background-radius: 8; -fx-alignment: CENTER_LEFT;">
+                <graphic>
+                    <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                        <image>
+                            <Image url="@../IMAGES/img.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+                <text>Dashboard</text>
+                <padding>
+                    <Insets left="10" />
+                </padding>
+            </Button>
+
+            <!-- Patient Management -->
+            <Button style="-fx-background-color: transparent; -fx-text-fill: rgba(255,255,255,0.8); -fx-font-size: 14px; -fx-padding: 12 20; -fx-background-radius: 8; -fx-alignment: CENTER_LEFT;">
+                <graphic>
+                    <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                        <image>
+                            <Image url="@../IMAGES/img_9.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+                <text>Patients</text>
+                <padding>
+                    <Insets left="10" />
+                </padding>
+            </Button>
+
+            <!-- Check-in/Check-out -->
+            <Button style="-fx-background-color: transparent; -fx-text-fill: rgba(255,255,255,0.8); -fx-font-size: 14px; -fx-padding: 12 20; -fx-background-radius: 8; -fx-alignment: CENTER_LEFT;">
+                <graphic>
+                    <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                        <image>
+                            <Image url="@../IMAGES/img_3.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+                <text>Check-in/out</text>
+                <padding>
+                    <Insets left="10" />
+                </padding>
+            </Button>
+
+            <!-- Billing -->
+            <Button style="-fx-background-color: transparent; -fx-text-fill: rgba(255,255,255,0.8); -fx-font-size: 14px; -fx-padding: 12 20; -fx-background-radius: 8; -fx-alignment: CENTER_LEFT;">
+                <graphic>
+                    <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                        <image>
+                            <Image url="@../IMAGES/img_2.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+                <text>Billing</text>
+                <padding>
+                    <Insets left="10" />
+                </padding>
+            </Button>
+
+            <!-- Reports -->
+            <Button style="-fx-background-color: transparent; -fx-text-fill: rgba(255,255,255,0.8); -fx-font-size: 14px; -fx-padding: 12 20; -fx-background-radius: 8; -fx-alignment: CENTER_LEFT;">
+                <graphic>
+                    <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                        <image>
+                            <Image url="@../IMAGES/img_8.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+                <text>Reports</text>
+                <padding>
+                    <Insets left="10" />
+                </padding>
+            </Button>
+        </VBox>
+
+        <!-- Logout Button at Bottom -->
+        <VBox VBox.vgrow="ALWAYS">
+            <children>
+                <VBox style="-fx-padding: 20 0;" />
+                <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                    <VBox.margin>
+                        <Insets top="130.0" />
+                    </VBox.margin>
+                    <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                            <HBox.margin>
+                                <Insets left="10.0" top="20.0" />
+                            </HBox.margin>
+                            <image>
+                                <Image url="@../IMAGES/img_11.png" />
+                            </image>
+                        </ImageView>
+                        <Button style="-fx-background-color: rgba(255,255,255,0.1); -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 12 20; -fx-background-radius: 8; -fx-border-color: rgba(255,255,255,0.3); -fx-border-width: 1; -fx-border-radius: 8; -fx-alignment: CENTER;">
+                            <text>Logout</text>
+                            <HBox.margin>
+                                <Insets top="20.0" />
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                </HBox>
+            </children></VBox>
+    </VBox>
+
+    <!-- Main Content Area -->
+     <VBox prefHeight="700.0" prefWidth="1027.0" spacing="0" style="-fx-background-color: #f8f9fa;">
+
+         <!-- Top Header -->
+         <HBox alignment="CENTER_LEFT" spacing="15" style="-fx-background-color: white; -fx-padding: 15 25; -fx-border-color: #e0e0e0; -fx-border-width: 0 0 1 0;">
+
+             <!-- Page Title -->
+             <VBox>
+                 <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #1a237e;" text="Appointment Dashboard" />
+                 <Label style="-fx-font-size: 14px; -fx-text-fill: #666;" text="Patient  Management" />
+             </VBox>
+
+             <HBox HBox.hgrow="ALWAYS" />
+
+             <!-- Search Box -->
+             <TextField promptText="Search patients..." style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-padding: 8 15; -fx-pref-width: 300;" />
+
+             <!-- Notifications & Profile -->
+             <HBox alignment="CENTER" spacing="15">
+                 <Button style="-fx-background-color: transparent;">
+                     <graphic>
+                         <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                             <image>
+                                 <Image url="@../IMAGES/img_3.png" />
+                             </image>
+                         </ImageView>
+                     </graphic>
+                 </Button>
+
+                 <!-- User Profile -->
+                 <HBox alignment="CENTER" spacing="10">
+                     <Circle fill="#1a73e8" radius="20" />
+                     <VBox>
+                         <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #333;" text="Receptionist" />
+                         <Label style="-fx-font-size: 12px; -fx-text-fill: #666;" text="Front Desk" />
+                     </VBox>
+                 </HBox>
+             </HBox>
+         </HBox>
+         <HBox alignment="CENTER" spacing="20" style="-fx-padding: 25;">
+            <children>
+               <VBox spacing="10" style="-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 20; -fx-pref-width: 200; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 10, 0, 0, 2);">
+                  <children>
+                     <HBox alignment="CENTER_LEFT" spacing="10">
+                        <children>
+                           <ImageView fitHeight="40" fitWidth="40" preserveRatio="true">
+                              <image>
+                                 <Image url="@../IMAGES/img_9.png" />
+                              </image>
+                           </ImageView>
+                           <VBox>
+                              <children>
+                                 <Label style="-fx-font-size: 14px; -fx-text-fill: #666;" text="Total Patients" />
+                                 <Label style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #1a73e8;" text="287" />
+                              </children>
+                           </VBox>
+                        </children>
+                     </HBox>
+                     <Label style="-fx-font-size: 12px; -fx-text-fill: #4caf50;" text="↑ 12% from last month" />
+                  </children>
+               </VBox>
+               <VBox spacing="10" style="-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 20; -fx-pref-width: 200; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 10, 0, 0, 2);">
+                  <children>
+                     <HBox alignment="CENTER_LEFT" spacing="10">
+                        <children>
+                           <ImageView fitHeight="40" fitWidth="40" preserveRatio="true">
+                              <image>
+                                 <Image url="@../IMAGES/img_4.png" />
+                              </image>
+                           </ImageView>
+                           <VBox>
+                              <children>
+                                 <Label style="-fx-font-size: 14px; -fx-text-fill: #666;" text="Active Doctors" />
+                                 <Label style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #ff9800;" text="24" />
+                              </children>
+                           </VBox>
+                        </children>
+                     </HBox>
+                     <Label style="-fx-font-size: 12px; -fx-text-fill: #666;" text="3 on duty now" />
+                  </children>
+               </VBox>
+               <VBox spacing="10" style="-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 20; -fx-pref-width: 200; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 10, 0, 0, 2);">
+                  <children>
+                     <HBox alignment="CENTER_LEFT" spacing="10">
+                        <children>
+                           <ImageView fitHeight="40" fitWidth="40" preserveRatio="true">
+                              <image>
+                                 <Image url="@../IMAGES/img_8.png" />
+                              </image>
+                           </ImageView>
+                           <VBox>
+                              <children>
+                                 <Label style="-fx-font-size: 14px; -fx-text-fill: #666;" text="Today's Appointments" />
+                                 <Label style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #e91e63;" text="42" />
+                              </children>
+                           </VBox>
+                        </children>
+                     </HBox>
+                     <Label style="-fx-font-size: 12px; -fx-text-fill: #666;" text="8 upcoming in 1 hour" />
+                  </children>
+               </VBox>
+            </children>
+         </HBox>
+    </VBox>
+    </HBox>
 </AnchorPane>
